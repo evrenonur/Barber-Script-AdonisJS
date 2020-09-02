@@ -1,0 +1,48 @@
+<!-- Top Bar Start -->
+<div class="top-bar d-none d-md-block">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="top-bar-left">
+          <div class="text">
+            <h2>{{ayarlar.open_time}}</h2>
+            <p>{{ayarlar.open_description}}</p>
+          </div>
+          <div class="text">
+            <h2>{{ayarlar.phone}}</h2>
+            <p>İletişime Geçin!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="top-bar-right">
+          <div class="social">
+            <a href="{{ayarlar.twitter}}"><i class="fab fa-twitter"></i></a>
+            <a href="{{ayarlar.facebook}}"><i class="fab fa-facebook-f"></i></a>
+            <a href="{{ayarlar.youtube}}"><i class="fab fa-youtube"></i></a>
+            <a href="{{ayarlar.instagram}}"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Top Bar End -->
+
+<!-- Nav Bar Start -->
+<div class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <div class="container-fluid">
+    <img src="{{assetsUrl('uploads/'+ayarlar.logo)}}" style="width: 75px; height: 75px">
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+      <div class="navbar-nav ml-auto">
+        <a href="{{route('home.index')}}" class="nav-item nav-link active">Anasayfa</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Nav Bar End -->

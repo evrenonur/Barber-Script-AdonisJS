@@ -1,0 +1,72 @@
+@layout('admin.master')
+@section('content')
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tile">
+        <h3 class="tile-title">Ekibimiz</h3>
+        <div class="tile-body">
+          <form action="{{route('admin.sayfalar.ekibimiz_insert')}}" method="post" enctype="multipart/form-data">
+            {{csrfField()}}
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="control-label">İsim</label>
+                  <input class="form-control" name="isim" type="text"  required>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="control-label">Pozisyon</label>
+                  <input class="form-control" type="text" name="pozisyon"  required>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="control-label">Resim (300x340)</label>
+                  <input type="file" name="resim" class="form-control">
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="tile-footer">
+          <button class="btn btn-success" type="submit">
+            <i class="fa fa-fw fa-lg fa-check-circle">
+            </i>Ekle</button>
+        </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tile">
+        <div class="tile-body">
+          <div class="table-responsive">
+            <table class="table table-hover table-bordered" id="sampleTable">
+              <thead>
+              <tr>
+                <th>ID</th>
+                <th>isim</th>
+                <th>Pozisyon</th>
+                <th class="text-center">İşlemler</th>
+              </tr>
+              </thead>
+              <tbody>
+              @each(item in ekibimiz)
+              <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.isim}}</td>
+                <td>{{item.pozisyon}}</td>
+                <td class="text-center"><a href="ekibimiz_delete/{{item.id}}" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+              </tr>
+              @endeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+@endsection

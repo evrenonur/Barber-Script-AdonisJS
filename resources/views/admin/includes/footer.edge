@@ -1,0 +1,19 @@
+{{script('backend/js/jquery-3.3.1.min.js')}}
+{{script('backend/js/popper.min.js')}}
+{{script('backend/js/bootstrap.min.js')}}
+{{script('backend/js/main.js')}}
+{{script('backend/js/plugins/pace.min.js')}}
+{{script('backend/js/plugins/jquery.dataTables.min.js')}}
+{{script('backend/js/plugins/dataTables.bootstrap.min.js')}}
+<script type="text/javascript">$('#sampleTable').DataTable();</script>
+<script>
+  @if(old('notification.type') == "success")
+  iziToast.success({title: "Başarılı!", message: "{{ old('notification.message') }}"});
+  @endif
+  @if(old('notification.type') == "error")
+  iziToast.error({title: "Hata!", message: "{{ old('notification.message') }}"});
+  @endif
+</script>
+
+</body>
+</html>

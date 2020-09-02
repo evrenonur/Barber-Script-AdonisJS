@@ -1,0 +1,123 @@
+@layout('home.master')
+
+@section('content')
+
+  <!-- Hero Start -->
+  <div class="hero">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="hero-text">
+            <h1>{{anasayfa.slider_baslik}}</h1>
+            <p>
+              {{anasayfa.slider_aciklama}}
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 d-none d-md-block">
+          <div class="hero-image">
+            <img src="{{assetsUrl('uploads/'+anasayfa.slider_resim)}}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Hero End -->
+
+  <!-- About Start -->
+  <div class="about">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 col-md-6">
+          <div class="about-img">
+            <img src="{{assetsUrl('uploads/'+anasayfa.hakkimizda_resim)}}" alt="Image">
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-6">
+          <div class="section-header text-left">
+            <h2>{{anasayfa.hakkimizda_baslik}}</h2>
+          </div>
+          <div class="about-text">
+            {{anasayfa.hakkimizda_aciklama}}<br>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About End -->
+
+
+
+  <!-- Pricing Start -->
+  <div class="price">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Uygun Fiyatlı</h2>
+      </div>
+      <div class="row">
+        @each(fiyat_item in fiyatlar)
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="price-item">
+            <div class="price-img">
+              <img src="{{assetsUrl('uploads/'+fiyat_item.fiyat_resim)}}" alt="{{fiyat_item.baslik}}">
+            </div>
+            <div class="price-text">
+              <h2>{{fiyat_item.baslik}}</h2>
+              <h3>₺{{fiyat_item.fiyat}}</h3>
+            </div>
+          </div>
+        </div>
+        @endeach
+
+      </div>
+    </div>
+  </div>
+  <!-- Pricing End -->
+
+
+  <!-- Testimonial Start -->
+  <div class="testimonial">
+    <div class="container">
+      <div class="owl-carousel testimonials-carousel">
+        @each(referans_item in referanslar)
+        <div class="testimonial-item">
+          <img src="{{assetsUrl('uploads/'+referans_item.resim)}}" alt="{{referans_item.isim}}">
+          <p>
+           {{referans_item.aciklama}}
+          </p>
+          <h2>{{referans_item.isim}}</h2>
+        </div>
+        @endeach
+      </div>
+    </div>
+  </div>
+  <!-- Testimonial End -->
+
+
+  <!-- Team Start -->
+  <div class="team">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Ekibimiz</h2>
+      </div>
+      <div class="row">
+        @each(ekib_item in ekibimiz)
+        <div class="col-lg-3 col-md-6">
+          <div class="team-item">
+            <div class="team-img">
+              <img src="{{assetsUrl('uploads/'+ekib_item.resim)}}" alt="{{ekib_item.isim}}">
+            </div>
+            <div class="team-text">
+              <h2>{{ekib_item.isim}}</h2>
+              <p>{{ekib_item.pozisyon}}</p>
+            </div>
+          </div>
+        </div>
+        @endeach
+      </div>
+    </div>
+  </div>
+  <!-- Team End -->
+
+@endsection

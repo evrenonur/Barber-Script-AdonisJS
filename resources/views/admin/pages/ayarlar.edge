@@ -1,0 +1,87 @@
+@layout('admin.master')
+@section('content')
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tile">
+        <h3 class="tile-title">Ayarlar</h3>
+        <div class="tile-body">
+          <form action="{{route('admin.sayfalar.ayarlar_update')}}" method="post" enctype="multipart/form-data">
+            {{csrfField()}}
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Site Başlık</label>
+                  <input class="form-control" type="text" name="title" value="{{ayarlar.title}}">
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Meta Açıklama</label>
+                  <input class="form-control" type="text" name="description" value="{{ayarlar.description}}">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Meta Keyword</label>
+                  <input class="form-control" type="text" name="keyword" value="{{ayarlar.keyword}}">
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Telefon</label>
+                  <input class="form-control" type="text" name="phone" value="{{ayarlar.phone}}">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Açılış Saatler</label>
+                  <input class="form-control" type="text" name="open_time" value="{{ayarlar.open_time}}">
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Açılış Açıklama</label>
+                  <input class="form-control" type="text" name="open_description" value="{{ayarlar.open_description}}">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Adres</label>
+                  <input class="form-control" type="text" name="adress" value="{{ayarlar.adress}}">
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Mail</label>
+                  <input class="form-control" type="text" name="mail" value="{{ayarlar.mail}}">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">Twitter</label>
+                  <input class="form-control" type="text" name="twitter" value="{{ayarlar.twitter}}" }>
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Facebook</label>
+                  <input class="form-control" type="text" name="facebook" value="{{ayarlar.facebook}}">
+                </div>
+              </div> <div class="col-md-6">
+                <div class="form-group">
+                  <label class="control-label">İnstagram</label>
+                  <input class="form-control" type="text" name="instagram" value="{{ayarlar.instagram}}">
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Youtube</label>
+                  <input class="form-control" type="text" name="youtube" value="{{ayarlar.youtube}}">
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Logo</label>
+                  <input class="form-control" type="file" name="logo">
+                  <input type="hidden" name="tmp_logo" value="{{ayarlar.logo}}">
+                </div>
+              </div>
+
+
+            </div>
+        </div>
+        <div class="tile-footer">
+          <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Kaydet</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+@endsection
