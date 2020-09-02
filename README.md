@@ -29,3 +29,8 @@ Run the following command to run startup migrations.
 ```js
 adonis migration:run
 ```
+Edit the .env file your database password,username,port,database_name and website url.
+And import your phpmyadmin sql file.
+Admin panel : site.com/admin
+Admin user : admin@admin.com
+Admin pass : admin
